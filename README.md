@@ -151,13 +151,6 @@ Started with EfficientNet-B0 pre-trained on ImageNet:
 | Test Samples | ~600 faces |
 | Training Time | ~45 min (CPU) |
 
-### Confusion Matrix
-```
-              Predicted
-              Real  Fake
-Actual Real   [275]  [28]
-       Fake   [27]  [270]
-```
 
 ##  Dataset
 

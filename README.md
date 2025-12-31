@@ -76,21 +76,6 @@ python src/train_model_fixed.py
 python src/gradcam_visualization.py
 ```
 
-##  Architecture
-```
-Input Image (224×224)
-    ↓
-EfficientNet-B0 Backbone
-  - Layers 1-5: Frozen (pre-trained features)
-  - Layers 6+: Fine-tuned for deepfakes
-    ↓
-Global Average Pooling
-    ↓
-Fully Connected Layer (1280 → 2)
-    ↓
-Softmax → [Real, Fake]
-```
-
 ##  Project Structure
 ```
 deepfake-detection/

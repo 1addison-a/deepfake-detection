@@ -2,16 +2,16 @@
 
 A deep learning system for detecting AI-generated deepfake videos using transfer learning and Grad-CAM explainability.
 
-![Deepfake Detection Demo](results/sample_visualizations/gradcam_000_003_face_0.jpg)
+![Deepfake Detection Demo](results/sample_visualizations/gradcam_037_072_face_5.jpg)
 
-## 🎯 Results
+##  Results
 
 - **Test Accuracy**: 90.83%
 - **Model**: EfficientNet-B0 with transfer learning
 - **Dataset**: FaceForensics++ (400+ videos)
 - **Key Innovation**: Video-level train/test splitting to prevent data leakage
 
-## 🔍 Features
+##  Features
 
 ### 1. Robust Detection
 - Binary classification (Real vs Fake faces)
@@ -28,24 +28,24 @@ A deep learning system for detecting AI-generated deepfake videos using transfer
 - Batch processing for multiple videos
 - Visualization generation for model interpretation
 
-## 📊 Sample Results
+##  Sample Results
 
 ### Real Face Detection
 The model correctly identifies real faces with diffuse attention patterns:
 
-![Real Face](results/sample_visualizations/gradcam_000_face_0.jpg)
+![Real Face](results/sample_visualizations/gradcam_547_face_7.jpg)
 
 ### Fake Face Detection
 The model highlights manipulation artifacts (red areas show suspicious regions):
 
-![Fake Face](results/sample_visualizations/gradcam_001_004_face_0.jpg)
+![Fake Face](results/sample_visualizations/gradcam_475_265_face_8.jpg)
 
 Notice how the model focuses on:
 - Blurred jawline boundaries (face swap edges)
 - Inconsistent textures around face perimeter
 - Lighting mismatches
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Installation
 ```bash
@@ -77,7 +77,7 @@ python src/train_model_fixed.py
 python src/gradcam_visualization.py
 ```
 
-## 🏗️ Architecture
+##  Architecture
 ```
 Input Image (224×224)
     ↓
@@ -92,7 +92,7 @@ Fully Connected Layer (1280 → 2)
 Softmax → [Real, Fake]
 ```
 
-## 📁 Project Structure
+##  Project Structure
 ```
 deepfake-detection/
 ├── src/
@@ -110,7 +110,7 @@ deepfake-detection/
 └── README.md
 ```
 
-## 🧠 How It Works
+##  How It Works
 
 ### Detection Pipeline
 
@@ -126,12 +126,12 @@ deepfake-detection/
 Initial naive image-level splitting achieved 98% accuracy but was **data leakage**:
 - Training set: `person_A_frame_1.jpg`
 - Test set: `person_A_frame_2.jpg`
-- Model memorized identities, not deepfake patterns ❌
+- Model memorized identities, not deepfake patterns 
 
 Fixed with video-level splitting:
 - Training videos: Persons A, B, C
 - Test videos: Persons X, Y, Z (never seen before)
-- Model learns actual manipulation artifacts ✅
+- Model learns actual manipulation artifacts 
 - Realistic accuracy: 90.83%
 
 #### Transfer Learning
@@ -141,7 +141,7 @@ Started with EfficientNet-B0 pre-trained on ImageNet:
 - Fine-tune later layers (deepfake-specific patterns)
 - Requires only 400 videos vs. millions from scratch
 
-## 📈 Performance
+##  Performance
 
 | Metric | Value |
 |--------|-------|
@@ -159,21 +159,21 @@ Actual Real   [275]  [28]
        Fake   [27]  [270]
 ```
 
-## 🔬 Dataset
+##  Dataset
 
 [FaceForensics++](https://github.com/ondyari/FaceForensics) - Benchmark deepfake detection dataset
 - **Real videos**: YouTube videos (pristine)
 - **Fake videos**: Deepfakes, Face2Face, FaceSwap manipulations
 - **Compression**: c23 (medium quality)
 
-## 🎓 Key Learnings
+##  Key Learnings
 
 1. **Data leakage is subtle**: Image-level splitting gave false 98% accuracy
 2. **Explainability matters**: Grad-CAM proved model learned real artifacts, not shortcuts
 3. **Transfer learning is powerful**: Achieved 90%+ with only 400 videos
 4. **Edge artifacts are key**: Model focuses on face boundaries where blending occurs
 
-## 🚀 Future Improvements
+##  Future Improvements
 
 - [ ] Ensemble multiple architectures (EfficientNet, Xception, ResNet)
 - [ ] Add temporal analysis (multi-frame sequences)
@@ -181,7 +181,7 @@ Actual Real   [275]  [28]
 - [ ] Train on additional manipulation methods (NeuralTextures, FaceShifter)
 - [ ] Deploy as web API for real-time detection
 
-## 📝 Citation
+##  Citation
 
 If you use this code, please cite:
 ```bibtex
@@ -193,11 +193,11 @@ If you use this code, please cite:
 }
 ```
 
-## 📄 License
+##  License
 
 MIT License - see LICENSE file for details
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - [FaceForensics++](https://github.com/ondyari/FaceForensics) for the dataset
 - [PyTorch](https://pytorch.org/) for the deep learning framework

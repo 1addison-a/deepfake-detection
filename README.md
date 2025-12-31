@@ -50,14 +50,13 @@ Notice how the model focuses on:
 ### Installation
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/deepfake-detection.git
+git clone https://github.com/1addison-a/deepfake-detection.git
 cd deepfake-detection
 
 # Install dependencies
 pip install -r requirements.txt
 
 # Download pre-trained model (if not using Git LFS)
-# [Add Google Drive link if needed]
 ```
 
 ### Usage
@@ -174,21 +173,6 @@ Started with EfficientNet-B0 pre-trained on ImageNet:
 - [ ] Train on additional manipulation methods (NeuralTextures, FaceShifter)
 - [ ] Deploy as web API for real-time detection
 
-##  Citation
-
-If you use this code, please cite:
-```bibtex
-@software{deepfake_detection_2025,
-  author = {Your Name},
-  title = {Deepfake Detection with Explainable AI},
-  year = {2025},
-  url = {https://github.com/YOUR_USERNAME/deepfake-detection}
-}
-```
-
-##  License
-
-MIT License - see LICENSE file for details
 
 ##  Acknowledgments
 
